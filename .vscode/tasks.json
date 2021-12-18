@@ -1,0 +1,29 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C build",
+            "problemMatcher":"$gcc",
+            "options": {"cwd": "${workspaceFolder}"},
+            "type": "cppbuild",
+            "command": "gcc",
+            "args": [
+                "${workspaceFolder}/src/*.c",
+                "-I",
+                "inc",
+                "-g3"
+                "-W",
+                "-Wall",
+                "-Wextra",
+                "-o",
+                "${workspaceFolder}/${workspaceFolderBasename}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
